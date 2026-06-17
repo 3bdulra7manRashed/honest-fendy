@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FENDY — دليل البرومبتات الاحترافية الكاملة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1A4D2E;
+    --gold: #C8960C;
+    --gold-light: #F0C842;
+    --cream: #FAF7F0;
+    --dark: #0D1F12;
+    --gray: #6B7280;
+    --light-green: #E8F5E9;
+    --border: #D4AF37;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    direction: rtl;
+  }
+
+  /* HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--green) 50%, #2D6A4F 100%);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(200,150,12,0.15) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+
+  .hero-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    color: white;
+    line-height: 1.2;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--gold-light); }
+  .hero p {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(200,150,12,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    position: relative;
+  }
+
+  /* INSTRUCTIONS */
+  .instructions {
+    background: white;
+    border-right: 6px solid var(--gold);
+    padding: 24px 28px;
+    margin: 40px;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .instructions h2 {
+    color: var(--green);
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .instructions ol {
+    padding-right: 20px;
+    line-height: 2;
+    color: #374151;
+    font-size: 15px;
+  }
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 40px;
+  }
+  .tool-card {
+    background: white;
+    border: 2px solid var(--light-green);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .tool-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .tool-card .name { font-weight: 700; color: var(--green); font-size: 16px; }
+  .tool-card .detail { font-size: 13px; color: var(--gray); margin-top: 4px; }
+  .tool-card .stars { color: var(--gold); font-size: 14px; margin-top: 6px; }
+
+  /* SECTION */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid var(--gold);
+  }
+  .section-num {
+    background: var(--green);
+    color: var(--gold-light);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .section-title h2 {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--green);
+  }
+  .section-title p { font-size: 14px; color: var(--gray); }
+
+  /* PRODUCT CARD */
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(200,150,12,0.2);
+    transition: box-shadow 0.3s;
+  }
+  .product-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.14); }
+
+  .card-header {
+    padding: 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #F3F4F6;
+  }
+  .card-header.tiles { background: linear-gradient(135deg, var(--green) 0%, #2D6A4F 100%); }
+  .card-header.inventions { background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%); }
+  .card-header.zero { background: linear-gradient(135deg, #4A1942 0%, #7B2D8B 100%); }
+
+  .product-name-ar {
+    font-size: 22px;
+    font-weight: 900;
+    color: white;
+  }
+  .product-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+  .product-tag {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    border: 1px solid rgba(255,255,255,0.3);
+    white-space: nowrap;
+  }
+
+  .card-body { padding: 28px; }
+
+  /* PROMPT BOX */
+  .prompt-section { margin-bottom: 24px; }
+  .prompt-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--green);
+    font-size: 15px;
+  }
+  .prompt-label .flag {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .prompt-label .flag.ar { background: #E8F5E9; }
+  .prompt-label .flag.en { background: #EBF5FB; }
+
+  .prompt-box {
+    background: #F8FAFC;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #1F2937;
+    direction: ltr;
+    text-align: left;
+    font-family: 'Tajawal', sans-serif;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt-box.arabic {
+    direction: rtl;
+    text-align: right;
+  }
+  .copy-btn {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .copy-btn:hover { background: var(--gold); color: var(--dark); }
+  .copy-btn.copied { background: #059669; }
+
+  /* TIPS */
+  .tips-box {
+    background: var(--light-green);
+    border-right: 4px solid var(--green);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin-top: 20px;
+  }
+  .tips-box h4 { color: var(--green); font-size: 14px; margin-bottom: 8px; font-weight: 700; }
+  .tips-box ul { padding-right: 20px; font-size: 13px; line-height: 2; color: #374151; }
+
+  /* COMPONENTS INFO */
+  .components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .comp-item {
+    background: var(--light-green);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    border-right: 3px solid var(--green);
+  }
+  .comp-item strong { display: block; color: var(--green); font-size: 12px; margin-bottom: 2px; }
+
+  /* MASTER PROMPT */
+  .master {
+    background: linear-gradient(135deg, var(--dark), var(--green));
+    border-radius: 20px;
+    padding: 36px;
+    margin: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .master::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(200,150,12,0.2), transparent 70%);
+  }
+  .master h2 {
+    color: var(--gold-light);
+    font-size: 24px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .master p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 20px; position: relative; }
+  .master .prompt-box {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(200,150,12,0.4);
+    color: #E5E7EB;
+    position: relative;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+  }
+  footer .logo { color: var(--gold-light); font-size: 20px; font-weight: 900; margin-bottom: 8px; }
+  footer p { color: rgba(255,255,255,0.5); font-size: 13px; }
+
+  /* DIVIDER */
+  .divider {
+    text-align: center;
+    margin: 40px 24px;
+    position: relative;
+  }
+  .divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .divider span {
+    background: var(--cream);
+    padding: 0 20px;
+    position: relative;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  @media(max-width:768px) {
+    .hero { padding: 40px 20px; }
+    .instructions { margin: 20px; }
+    .tools { margin: 20px; }
+    .master { margin: 20px; padding: 24px; }
+    .card-header { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-logo">HONEST FENDY FOUNDATION™ — SAUDI ARABIA</div>
+  <h1>دليل البرومبتات <span>الاحترافية الكاملة</span></h1>
+  <p>كل ما تحتاجه لتوليد صور احترافية لجميع منتجات فندي — انسخ والصق مباشرة</p>
+  <div class="badge">د. خالد عبدالنعيم فندي — براءات اختراع محمية 2026</div>
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="instructions" style="max-width:1100px;margin:40px auto;">
+  <h2>⚡ كيف تستخدم هذا الدليل</h2>
+  <ol>
+    <li>اختر الأداة المناسبة من القائمة أدناه (Adobe Firefly أو Midjourney)</li>
+    <li>اضغط زر <strong>"نسخ"</strong> على أي برومبت تريده</li>
+    <li>الصق البرومبت مباشرة في الأداة</li>
+    <li>اضغط Generate وانتظر 10-30 ثانية</li>
+    <li>اختر أفضل نتيجة وأعد التوليد إذا أردت تحسيناً</li>
+  </ol>
+</div>
+
+<!-- TOOLS -->
+<div class="tools" style="max-width:1100px;margin:0 auto 40px;">
+  <div class="tool-card">
+    <div class="name">Adobe Firefly</div>
+    <div class="detail">firefly.adobe.com</div>
+    <div class="detail">مجاني 25 صورة/شهر</div>
+    <div class="stars">★★★★★ الأفضل للمنتجات</div>
+  </div>
+  <div class="tool-card">
+    <div class="name">Midjourney</div>
+    <div class="detail">midjourney.com</div>
+    <div class="detail">10$ / شهر</div>
+    <div class="stars">★★★★★ أعلى جودة</div>
+  </div>
+  <div class="tool-card">
+    <div class="name">Leonardo AI</div>
+    <div class="detail">leonardo.ai</div>
+    <div class="detail">مجاني جزئياً</div>
+    <div class="stars">★★★★ ممتاز مجاناً</div>
+  </div>
+  <div class="tool-card">
+    <div class="name">DALL-E 3</div>
+    <div class="detail">ChatGPT Plus</div>
+    <div class="detail">20$ / شهر</div>
+    <div class="stars">★★★ جيد للبداية</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- SECTION 1: TILES -->
+<!-- ═══════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">
+    <div class="section-num">١</div>
+    <div>
+      <h2>بلاطات فندي السعودية الأربع</h2>
+      <p>Pearl Sky · Desert Ruby · Emerald Oasis · Onyx Basalt</p>
+    </div>
+  </div>
+
+  <!-- PEARL SKY -->
+  <div class="product-card">
+    <div class="card-header tiles">
+      <div>
+        <div class="product-name-ar">بلاط اللؤلؤ السماوي</div>
+        <div class="product-name-en">PEARL SKY</div>
+      </div>
+      <div class="product-tag">أولوية قصوى</div>
+    </div>
+    <div class="card-body">
+      <div class="components-grid">
+        <div class="comp-item"><strong>المكون الرئيسي</strong>رمال بيضاء سعودية</div>
+        <div class="comp-item"><strong>المميز</strong>نانو زجاج ملون لؤلؤي</div>
+        <div class="comp-item"><strong>المعزز</strong>سيليكا قش الأرز</div>
+        <div class="comp-item"><strong>الحامل</strong>مسحوق رخام وسيراميك</div>
+        <div class="comp-item"><strong>اللون</strong>أبيض لؤلؤي فاتح</div>
+        <div class="comp-item"><strong>العمر</strong>+30 سنة</div>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي (الأقوى والأدق)</div>
+        <div class="prompt-box" id="p1en">Luxury premium floor tile product photography, ultra-realistic commercial advertising photo. A single large format tile (60x60cm) with a stunning white pearl luminescent surface. The tile has a smooth, glossy finish with extremely subtle blue-grey micro-veining patterns, creating a natural pearl shell-like iridescence. The surface catches light beautifully with a soft, ethereal glow. Shot in a high-end Saudi luxury villa interior setting, with warm natural sunlight streaming through floor-to-ceiling windows. The tile is shown slightly tilted to reveal its perfect flat surface and clean beveled edges. Background shows a blurred modern Saudi architectural space. Bottom right corner shows a small elegant green logo "Honest Fendi Saudi Arabia" with a palm tree icon. A small green eco badge reading "CO2" is subtly visible. Ultra sharp focus, 8K resolution, professional product photography lighting, Canon EOS R5, f/8 aperture. Photorealistic, no CGI look, advertisement quality.</div>
+        <button class="copy-btn" onclick="copyText('p1en', this)">📋 نسخ</button>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag ar">🇸🇦</span> البرومبت العربي (لأدوات تدعم العربية)</div>
+        <div class="prompt-box arabic" id="p1ar">صورة تجارية احترافية لبلاطة فاخرة، تصوير منتج إعلاني عالي الجودة. بلاطة أرضية كبيرة 60×60 سم بلون أبيض لؤلؤي لامع، سطح ناعم وبراق مع تعرقات رمادية-زرقاء خفية تعطي مظهر صدف اللؤلؤ. الإضاءة طبيعية دافئة تعكس بريقاً ناعماً على السطح. الخلفية: فيلا سعودية فاخرة حديثة بنوافذ كبيرة. زاوية إمالة خفيفة تظهر سماكة البلاطة وحوافها المشطوفة. شعار "هونست فندي السعودية" بلون أخضر في الزاوية. جودة 8K، تصوير احترافي.</div>
+        <button class="copy-btn" onclick="copyText('p1ar', this)">📋 نسخ</button>
+      </div>
+
+      <div class="tips-box">
+        <h4>💡 نصائح للحصول على أفضل نتيجة</h4>
+        <ul>
+          <li>في Firefly: اختر "Photo" وليس "Art" — نمط "Product Photography"</li>
+          <li>أضف في النهاية: <strong>--ar 1:1 --q 2 --s 750</strong> في Midjourney</li>
+          <li>إذا اللون ليس لؤلؤياً كافياً: أضف "pearlescent sheen, mother of pearl effect"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESERT RUBY -->
+  <div class="product-card">
+    <div class="card-header tiles">
+      <div>
+        <div class="product-name-ar">بلاط الياقوت الصحراوي</div>
+        <div class="product-name-en">DESERT RUBY</div>
+      </div>
+      <div class="product-tag">اللون الأحمر الخليجي</div>
+    </div>
+    <div class="card-body">
+      <div class="components-grid">
+        <div class="comp-item"><strong>المكون الرئيسي</strong>رمال الفجوم الحمراء</div>
+        <div class="comp-item"><strong>المميز</strong>خبث الحديد المؤكسد</div>
+        <div class="comp-item"><strong>الملمس</strong>حبيبي دافئ</div>
+        <div class="comp-item"><strong>اللون</strong>أحمر تراب دافئ</div>
+        <div class="comp-item"><strong>الإلهام</strong>صحراء الربع الخالي</div>
+        <div class="comp-item"><strong>العمر</strong>+30 سنة</div>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p2en">Luxury premium floor tile product photography, ultra-realistic commercial advertising photo. A large format tile (60x60cm) with a rich warm terracotta-red surface inspired by Saudi Arabian desert sand dunes. The tile has a semi-matte finish with fine natural texture resembling compacted desert sand, subtle reddish-brown mineral patterns, warm ochre and sienna tones throughout. The surface has an earthy, sophisticated premium look. Shot in a high-end modern Arabic majlis interior, with warm golden lighting evoking desert sunset. Background shows a luxury Saudi contemporary living space with wooden accents. The tile is displayed at a slight angle showing its thickness and beveled edges. Small green "Honest Fendi Saudi Arabia" logo with palm tree emblem. Ultra sharp focus, 8K resolution, professional product photography, advertisement quality, photorealistic.</div>
+        <button class="copy-btn" onclick="copyText('p2en', this)">📋 نسخ</button>
+      </div>
+
+      <div class="tips-box">
+        <h4>💡 نصائح للياقوت الصحراوي</h4>
+        <ul>
+          <li>إذا اللون باهت: أضف "deep rich terracotta, saturated warm red-brown"</li>
+          <li>إذا اللون قاتم جداً: أضف "warm golden undertones, sun-kissed desert color"</li>
+          <li>أضف "rustic luxury, artisanal premium finish" لمزيد من الفخامة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMERALD OASIS -->
+  <div class="product-card">
+    <div class="card-header tiles">
+      <div>
+        <div class="product-name-ar">بلاط واحة الزمرد</div>
+        <div class="product-name-en">EMERALD OASIS</div>
+      </div>
+      <div class="product-tag">الأخضر الملكي</div>
+    </div>
+    <div class="card-body">
+      <div class="components-grid">
+        <div class="comp-item"><strong>المكون الرئيسي</strong>رمال خضراء بركانية</div>
+        <div class="comp-item"><strong>المميز</strong>نانو بازلت</div>
+        <div class="comp-item"><strong>الملمس</strong>ناعم مشع</div>
+        <div class="comp-item"><strong>اللون</strong>أخضر زمردي عميق</div>
+        <div class="comp-item"><strong>الإلهام</strong>واحات الجزيرة العربية</div>
+        <div class="comp-item"><strong>الميزة</strong>يخزن CO₂</div>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p3en">Luxury premium floor tile product photography, ultra-realistic commercial advertising photo. A large format tile (60x60cm) with a deep rich emerald green surface, inspired by lush Arabian oases and Islamic architecture. The tile has a polished glossy finish with deep green tones, subtle dark forest-green and jade variations throughout, creating depth and luxury. The surface has a mesmerizing jewel-like quality. Shot in an elegant Islamic-inspired interior space with arabesque patterns, marble columns, and soft ambient lighting. The green reflects beautifully against warm white marble surroundings. A small green eco badge "CO2" symbol shows it captures carbon. "Honest Fendi Saudi Arabia" logo with palm tree emblem. Ultra sharp focus, 8K resolution, luxury product photography, photorealistic, advertisement quality.</div>
+        <button class="copy-btn" onclick="copyText('p3en', this)">📋 نسخ</button>
+      </div>
+
+      <div class="tips-box">
+        <h4>💡 نصائح لواحة الزمرد</h4>
+        <ul>
+          <li>لجعله أكثر زمردية: أضف "deep emerald, malachite green, jewel tones"</li>
+          <li>لإظهار البيئي: أضف "eco-friendly tile, sustainable luxury green"</li>
+          <li>للإسلامي: أضف "Islamic geometric shadow patterns on the surface"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ONYX BASALT -->
+  <div class="product-card">
+    <div class="card-header tiles">
+      <div>
+        <div class="product-name-ar">بلاط الأونيكس البازلتي</div>
+        <div class="product-name-en">ONYX BASALT</div>
+      </div>
+      <div class="product-tag">الفخامة الداكنة</div>
+    </div>
+    <div class="card-body">
+      <div class="components-grid">
+        <div class="comp-item"><strong>المكون الرئيسي</strong>رمال سوداء بركانية</div>
+        <div class="comp-item"><strong>المميز</strong>أكسيد الألومنيوم</div>
+        <div class="comp-item"><strong>الملمس</strong>مرآة داكنة</div>
+        <div class="comp-item"><strong>اللون</strong>أسود مجري بريق نجوم</div>
+        <div class="comp-item"><strong>الإلهام</strong>سماء الجزيرة الليلية</div>
+        <div class="comp-item"><strong>العمر</strong>+30 سنة</div>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p4en">Luxury premium floor tile product photography, ultra-realistic commercial advertising photo. A large format tile (60x60cm) with a dramatic deep black volcanic basalt surface. The tile has a highly polished mirror-like finish with intense black depth, subtle micro-sparkle effect from aluminum oxide crystals resembling a night sky full of stars, minimal silver-grey mineral veining. The surface exudes ultimate luxury and sophistication. Shot in an ultra-modern luxury penthouse interior, dramatic architectural lighting with ceiling spotlights creating stunning reflections on the tile surface. Background shows a sleek dark contemporary Saudi luxury space. "Honest Fendi Saudi Arabia" logo in gold color with palm tree emblem. Ultra sharp focus, 8K resolution, dramatic professional product photography, advertisement quality, photorealistic.</div>
+        <button class="copy-btn" onclick="copyText('p4en', this)">📋 نسخ</button>
+      </div>
+
+      <div class="tips-box">
+        <h4>💡 نصائح للأونيكس البازلتي</h4>
+        <ul>
+          <li>لتعزيز البريق: أضف "mirror polish, high gloss reflective, obsidian black"</li>
+          <li>لتأثير النجوم: أضف "galaxy effect, star-like mineral inclusions"</li>
+          <li>للدراما: أضف "dramatic chiaroscuro lighting, luxury dark interior"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><span>✦ الاختراعات ✦</span></div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- SECTION 2: INVENTIONS -->
+<!-- ═══════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">
+    <div class="section-num">٢</div>
+    <div>
+      <h2>اختراعات فندي التقنية</h2>
+      <p>القالب الحراري · الطوب الحراري · الجيوبلوك</p>
+    </div>
+  </div>
+
+  <!-- THERMAL CORE -->
+  <div class="product-card">
+    <div class="card-header inventions">
+      <div>
+        <div class="product-name-ar">القالب الحراري بكبسولة الملح</div>
+        <div class="product-name-en">FENDY THERMAL CORE™</div>
+      </div>
+      <div class="product-tag">براءة اختراع مسجلة</div>
+    </div>
+    <div class="card-body">
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p5en">Professional technical product photography of an innovative thermal energy storage block. A donut-shaped compressed block (20cm diameter) cut in cross-section revealing three distinct internal layers: outer shell layer in dark grey-brown (iron slag and basalt mixture), middle layer in warm reddish-brown with visible channels and pores (agricultural waste fibers), and central core in light grey crystalline appearance (salt crystal capsule - the thermal battery). The cross-section shows clean precise layers like a geological sample. The block has a precisely drilled central channel. Dramatic studio lighting highlights the layer structure. Background is clean white. Scientific/industrial product photography style. "FENDY THERMAL CORE™" text label. Small patent badge. Ultra sharp focus, 8K resolution, photorealistic.</div>
+        <button class="copy-btn" onclick="copyText('p5en', this)">📋 نسخ</button>
+      </div>
+
+      <div class="tips-box">
+        <h4>💡 نصائح للقالب الحراري</h4>
+        <ul>
+          <li>طلب مقطع عرضي (cross section) يظهر الطبقات الثلاث</li>
+          <li>أضف "technical illustration style, engineering product photo"</li>
+          <li>يمكن طلب صورة كاملة غير مقطوعة + صورة مقطوعة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- THERMAL BRICK -->
+  <div class="product-card">
+    <div class="card-header inventions">
+      <div>
+        <div class="product-name-ar">طوب فندي الحراري السعودي™</div>
+        <div class="product-name-en">FENDY SAUDI THERMAL BRICK™</div>
+      </div>
+      <div class="product-tag">100% سعودي الصنع</div>
+    </div>
+    <div class="card-body">
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p6en">Professional product photography of an innovative eco-friendly building brick. A standard-sized brick (25x12x6cm) made from compressed industrial and agricultural waste materials. The brick surface has a textured dark grey-brown appearance with visible natural fiber inclusions (palm leaf fibers) and mineral speckles (basalt and iron slag particles). One corner is cut away to reveal the three-layer internal structure: dense outer shell, fibrous middle layer, and crystalline salt core capsule in the center. The brick is displayed on a clean surface with one example showing it in a wall pattern. Background shows a modern Saudi architectural context. Green sustainability badge. "FENDY Saudi Thermal Brick™" label. Ultra sharp focus, photorealistic, 8K, advertisement quality.</div>
+        <button class="copy-btn" onclick="copyText('p6en', this)">📋 نسخ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GEOBLOCK -->
+  <div class="product-card">
+    <div class="card-header inventions">
+      <div>
+        <div class="product-name-ar">جيوبلوك فندي™ — إنترلوك + أرصفة</div>
+        <div class="product-name-en">FENDY GEOBLOCK™</div>
+      </div>
+      <div class="product-tag">بصمة كربونية سالبة</div>
+    </div>
+    <div class="card-body">
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p7en">Professional product photography of innovative eco-friendly interlocking paving blocks. Multiple interlocking blocks displayed in a creative arrangement showing how they fit together. The blocks are made from compressed industrial waste - dark charcoal-grey color with subtle texture showing compressed iron slag, basalt, marble powder, and rice husk silica. Some blocks are cut to show dense homogeneous internal structure. The surface has a slightly rough anti-slip texture. Displayed in a modern Saudi public space context - a plaza, park pathway, or contemporary building entrance. Warm natural lighting. Green "Zero Carbon" badge prominently displayed. "FENDY GeoBlock™ — Zero Cement, Zero Kiln" label. Ultra sharp focus, 8K, photorealistic, professional advertising photography.</div>
+        <button class="copy-btn" onclick="copyText('p7en', this)">📋 نسخ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><span>✦ منتجات FENDY Zero™ ✦</span></div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- SECTION 3: FENDY ZERO PRODUCTS -->
+<!-- ═══════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">
+    <div class="section-num">٣</div>
+    <div>
+      <h2>منتجات نظام فندي زيرو™</h2>
+      <p>كربون نشط · نانو سيليكا · صوف معدني · تربة ذكية</p>
+    </div>
+  </div>
+
+  <!-- ACTIVATED CARBON -->
+  <div class="product-card">
+    <div class="card-header zero">
+      <div>
+        <div class="product-name-ar">كربون فندي النشط™ — EG-BBS™</div>
+        <div class="product-name-en">FENDY ACTIVATED CARBON™</div>
+      </div>
+      <div class="product-tag">2,400$/طن</div>
+    </div>
+    <div class="card-body">
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p8en">Professional premium product photography of high-grade activated carbon granules. A luxury packaging concept showing: main display with small black granules of activated carbon in a clear glass cylinder container with premium label "EG-BBS™ Fendy Activated Carbon — Made in Egypt from Nile Water Hyacinth & Rice Husk". The granules are intensely black with a matte porous surface. Beside the container, a small pile of granules showing their granular texture under macro lighting. The background shows water purification equipment or industrial filters suggesting the product's use. Premium scientific packaging aesthetic. Deep black granules dramatically lit with studio lighting creating highlights on individual granules showing their porous structure. "Honest Fendy Foundation™" branding. Clean white studio background. 8K ultra sharp macro photography, photorealistic.</div>
+        <button class="copy-btn" onclick="copyText('p8en', this)">📋 نسخ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NANO SILICA -->
+  <div class="product-card">
+    <div class="card-header zero">
+      <div>
+        <div class="product-name-ar">نانو سيليكا فندي™</div>
+        <div class="product-name-en">FENDY NANO SILICA™</div>
+      </div>
+      <div class="product-tag">1,820$/طن</div>
+    </div>
+    <div class="card-body">
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p9en">Professional premium product photography of ultra-pure nano silica powder from rice husk ash. A luxury scientific packaging showing: elegant matte white bag or container labeled "FENDY Nano Silica™ — 95-99% Purity — From Egyptian Rice Husk". A small glass dish beside it displays the ultra-fine white powder (almost luminously white, extremely fine texture). Macro inset showing the nano-particle structure. Background suggests high-tech laboratory or industrial application. The powder has a pure bright white color, almost glowing quality. Compare image showing rice husk raw material transforming to white powder to demonstrate the innovation. "Made in Egypt — Exported to Saudi Arabia & Gulf" subtitle. Ultra sharp professional photography, 8K, photorealistic, laboratory aesthetic.</div>
+        <button class="copy-btn" onclick="copyText('p9en', this)">📋 نسخ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MINERAL WOOL -->
+  <div class="product-card">
+    <div class="card-header zero">
+      <div>
+        <div class="product-name-ar">صوف فندي المعدني™</div>
+        <div class="product-name-en">FENDY MINERAL WOOL™</div>
+      </div>
+      <div class="product-tag">عزل حراري وصوتي</div>
+    </div>
+    <div class="card-body">
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p10en">Professional product photography of premium mineral wool insulation panels made from iron slag. A stack of mineral wool panels displayed in a clean industrial aesthetic. The panels show light golden-yellow fibrous texture, soft and dense appearance. One panel is shown being cut to reveal the fiber structure inside - fine golden filaments visible. Background shows a construction context - being installed in a wall or roof. Product label "FENDY Mineral Wool™ — From SABIC Iron Slag — Fire Resistant 1200°C". A temperature resistance badge and fire safety certification icon. The wool has a warm yellow-gold color typical of quality mineral wool. Industrial yet premium product photography aesthetic. "Made in Saudi Arabia from 100% Local Slag" subtitle. Ultra sharp focus, 8K, photorealistic.</div>
+        <button class="copy-btn" onclick="copyText('p10en', this)">📋 نسخ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SMART SOIL -->
+  <div class="product-card">
+    <div class="card-header zero">
+      <div>
+        <div class="product-name-ar">تربة فندي الذكية™</div>
+        <div class="product-name-en">FENDY SMART SOIL™</div>
+      </div>
+      <div class="product-tag">بصمة جيوكيميائية مصرية</div>
+    </div>
+    <div class="card-body">
+      <div class="prompt-section">
+        <div class="prompt-label"><span class="flag en">🇬🇧</span> البرومبت الإنجليزي</div>
+        <div class="prompt-box" id="p11en">Professional premium product photography of revolutionary smart organic soil. Elegant eco-packaging bag (5kg) labeled "FENDY Smart Soil™ — Made from Industrial & Agricultural Waste — Aswan Nile Silt + Volcanic Rock + Biochar". The bag is open slightly showing rich dark brown-black soil with visible texture variations. Beside it: a small garden pot with a thriving green plant growing in the soil demonstrating its fertility. Also show raw ingredients: Aswan silt (dark), volcanic rock powder (grey), biochar (black) in small glass dishes showing the transformation from waste to life. The soil has a rich, premium agricultural appearance with visible organic matter. Warm natural outdoor lighting suggesting growth and nature. "Zero Waste — End of Life Cycle Product — Was Industrial Waste, Now Life" tagline. Ultra sharp focus, 8K, photorealistic, premium agricultural product photography.</div>
+        <button class="copy-btn" onclick="copyText('p11en', this)">📋 نسخ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MASTER PROMPT -->
+<div class="master">
+  <h2>⭐ البرومبت الرئيسي — لجميع البلاطات دفعة واحدة</h2>
+  <p>انسخ هذا وأرسله لأي أداة AI لتوليد صور المقارنة الشاملة مثل صورة العرض التجاري</p>
+  <div class="prompt-box" id="pmaster" style="position:relative;">Professional commercial product display photography showing four luxury floor tiles from "Honest Fendi Saudi Arabia" brand displayed on elegant metal stands in a modern luxury showroom with floor-to-ceiling windows overlooking the Arabian Gulf at sunset. Saudi flag visible in background. The four tiles on display stands are: 1) PEARL SKY - white pearl luminescent tile on leftmost stand, 2) DESERT RUBY - warm terracotta red tile, 3) EMERALD OASIS - deep emerald green tile, 4) ONYX BASALT - dramatic black galaxy tile on rightmost stand. Each stand has the product name in Arabic and English. All tiles show eco badges "CO2" and feature the "Honest Fendi Saudi Arabia" palm tree logo. The showroom is ultra-modern, the lighting is dramatic and professional. Luxury Saudi interior design context. Ultra sharp focus, 8K resolution, commercial advertising photography quality, photorealistic, wide angle shot showing all four tiles.</div>
+  <button class="copy-btn" onclick="copyText('pmaster', this)" style="position:absolute;top:12px;left:12px;">📋 نسخ الرئيسي</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">HONEST FENDY FOUNDATION™</div>
+  <p>د. خالد عبدالنعيم فندي — صعيد مصر</p>
+  <p style="margin-top:8px">براءات الاختراع محمية — جميع الحقوق محفوظة 2026</p>
+  <p style="margin-top:8px;color:rgba(255,255,255,0.3)">honestfendy.com</p>
+</footer>
+
+<script>
+function copyText(id, btn) {
+  const el = document.getElementById(id);
+  const text = el.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✅ تم النسخ';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.classList.remove('copied');
+    }, 2500);
+  }).catch(() => {
+    const range = document.createRange();
+    range.selectNode(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    btn.innerHTML = '✅ تم النسخ';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.innerHTML = '📋 نسخ'; btn.classList.remove('copied'); }, 2500);
+  });
+}
+</script>
+</body>
+</html>

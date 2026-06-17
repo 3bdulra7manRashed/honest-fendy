@@ -4,7 +4,8 @@ import { ArrowLeft, Atom, Droplets, Leaf, Recycle, Sparkles } from "lucide-react
 import { ButtonLink } from "@/components/button-link";
 import { FadeIn } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
-import { books, galleryItems, innovations, stats } from "@/lib/data";
+import { galleryItems, innovations, stats } from "@/lib/data";
+import { books } from "@/lib/books-data";
 
 const visionItems = [
   { title: "حلول المياه", icon: Droplets },

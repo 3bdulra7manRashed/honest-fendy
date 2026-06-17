@@ -1,0 +1,30 @@
+import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { filename: string } }
+) {
+  try {
+    const filename = decodeURIComponent(params.filename);
+    const filePath = path.join(process.cwd(), "public/books", filename);
+
+    if (!fs.existsSync(filePath)) {
+      return new NextResponse("File Not Found", { status: 404 });
+    }
+
+    const fileBuffer = fs.readFileSync(filePath);
+
+    return new NextResponse(fileBuffer, {
+      headers: {
+        "Content-Type": "application/pdf",
+        "Content-Disposition": "inline",
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    });
+  } catch (error) {
+    console.error("Error serving PDF inline:", error);
+    return new NextResponse("Internal Server Error", { status: 500 });
+  }
+}

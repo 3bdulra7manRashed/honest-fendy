@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honest Fendy Foundation – Corporate Identity Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;900&family=Cairo:wght@300;400;600;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --deep-green:#0a1f0f;
+  --forest:#0f2d18;
+  --mid-green:#1a5c2a;
+  --bright-green:#2d9e4f;
+  --nile:#3dc87a;
+  --gold:#c9951a;
+  --gold-bright:#f0c040;
+  --gold-pale:#fae07a;
+  --gold-shine:#fff5c0;
+  --white:#f5f5f0;
+  --cream:#faf7ed;
+  --silver:#c8c8c0;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--deep-green);
+  font-family:'Cairo',sans-serif;
+  color:var(--white);
+  overflow-x:hidden;
+}
+
+/* ══ SCROLLBAR ══ */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:#0a1f0f;}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+
+/* ══════════════════════════════
+   HERO SECTION
+══════════════════════════════ */
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  overflow:hidden;
+  background:radial-gradient(ellipse at 50% 40%, #1a4d28 0%, #0a1f0f 60%, #060e07 100%);
+}
+
+/* Animated Nile water background */
+.nile-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 120% 60% at 50% 110%, rgba(61,200,122,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 40% at 20% 80%, rgba(45,158,79,.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 30% at 80% 70%, rgba(201,149,26,.06) 0%, transparent 50%);
+}
+
+/* Particle dots */
+.particles{position:absolute;inset:0;z-index:1;pointer-events:none;}
+.particle{
+  position:absolute;
+  border-radius:50%;
+  background:var(--gold-bright);
+  animation:float-particle linear infinite;
+  opacity:0;
+}
+@keyframes float-particle{
+  0%{opacity:0;transform:translateY(0) scale(0);}
+  10%{opacity:.7;}
+  90%{opacity:.3;}
+  100%{opacity:0;transform:translateY(-100vh) scale(1.5);}
+}
+
+/* Infinity logo watermark */
+.infinity-mark{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:600px;height:300px;
+  opacity:.04;z-index:1;
+}
+
+.hero-inner{position:relative;z-index:5;text-align:center;padding:40px 20px;}
+
+/* Top ribbon */
+.hero-ribbon{
+  display:inline-flex;align-items:center;gap:12px;
+  border:1px solid rgba(201,149,26,.4);
+  padding:6px 20px;
+  font-family:'Cinzel',serif;
+  font-size:10px;letter-spacing:4px;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:30px;
+  background:rgba(201,149,26,.05);
+}
+.ribbon-dot{width:5px;height:5px;background:var(--gold-bright);border-radius:50%;}
+
+/* Main logo text */
+.hero-logo{
+  font-family:'Cinzel Decorative',serif;
+  font-size:clamp(28px,7vw,72px);
+  font-weight:900;
+  line-height:1.1;
+  background:linear-gradient(180deg,
+    var(--gold-shine) 0%,
+    var(--gold-bright) 30%,
+    var(--gold) 65%,
+    #6b4a08 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 0 30px rgba(240,192,64,.4));
+  animation:logo-glow 4s ease-in-out infinite;
+  letter-spacing:3px;
+}
+@keyframes logo-glow{
+  0%,100%{filter:drop-shadow(0 0 30px rgba(240,192,64,.4));}
+  50%{filter:drop-shadow(0 0 60px rgba(255,245,192,.7)) drop-shadow(0 0 100px rgba(240,192,64,.3));}
+}
+
+.hero-logo-ar{
+  font-family:'Amiri',serif;
+  font-size:clamp(20px,4vw,42px);
+  color:var(--nile);
+  letter-spacing:2px;
+  margin:8px 0;
+  text-shadow:0 0 20px rgba(61,200,122,.4);
+}
+
+.hero-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(13px,2.5vw,22px);
+  color:var(--gold-pale);
+  letter-spacing:3px;
+  margin:16px 0 4px;
+  opacity:.9;
+}
+.hero-tagline-ar{
+  font-family:'Cairo',sans-serif;
+  font-size:clamp(11px,2vw,16px);
+  color:rgba(245,245,240,.6);
+  letter-spacing:1px;
+  margin-bottom:30px;
+}
+
+/* Gold divider */
+.gold-divider{
+  width:200px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-bright),transparent);
+  margin:20px auto;
+}
+.gold-divider-sm{
+  width:80px;height:.5px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:10px auto;
+}
+
+/* Hero stats row */
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:20px;justify-content:center;
+  margin-top:30px;
+}
+.hero-stat{
+  text-align:center;
+  padding:14px 22px;
+  border:1px solid rgba(201,149,26,.25);
+  background:rgba(10,31,15,.6);
+  backdrop-filter:blur(10px);
+  min-width:110px;
+  animation:fade-up .8s ease both;
+}
+.hero-stat:nth-child(1){animation-delay:.1s;}
+.hero-stat:nth-child(2){animation-delay:.2s;}
+.hero-stat:nth-child(3){animation-delay:.3s;}
+.hero-stat:nth-child(4){animation-delay:.4s;}
+.hero-stat:nth-child(5){animation-delay:.5s;}
+@keyframes fade-up{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.stat-num{
+  font-family:'Cinzel Decorative',serif;
+  font-size:22px;font-weight:900;
+  color:var(--gold-bright);
+  display:block;
+}
+.stat-label{
+  font-size:9px;letter-spacing:2px;
+  color:var(--silver);text-transform:uppercase;
+  font-family:'Cinzel',serif;
+  display:block;margin-top:3px;
+}
+
+/* Scroll indicator */
+.scroll-ind{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  z-index:5;display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.scroll-line{
+  width:1px;height:50px;
+  background:linear-gradient(180deg,var(--gold),transparent);
+  animation:scroll-anim 1.5s ease-in-out infinite;
+}
+@keyframes scroll-anim{
+  0%,100%{transform:scaleY(1);opacity:1;}
+  50%{transform:scaleY(.5);opacity:.5;}
+}
+.scroll-text{
+  font-family:'Cinzel',serif;font-size:8px;
+  letter-spacing:3px;color:var(--gold);opacity:.6;
+}
+
+/* ══════════════════════════════
+   SECTION BASE
+══════════════════════════════ */
+section{padding:80px 20px;position:relative;}
+.container{max-width:1100px;margin:0 auto;}
+
+.section-label{
+  font-family:'Cinzel',serif;font-size:9px;
+  letter-spacing:6px;color:var(--gold);
+  text-transform:uppercase;text-align:center;
+  margin-bottom:8px;opacity:.8;
+}
+.section-title{
+  font-family:'Cinzel Decorative',serif;
+  font-size:clamp(18px,4vw,34px);
+  color:var(--gold-bright);
+  text-align:center;margin-bottom:6px;
+  line-height:1.3;
+}
+.section-title-ar{
+  font-family:'Amiri',serif;
+  font-size:clamp(16px,3vw,26px);
+  color:var(--nile);text-align:center;
+  margin-bottom:30px;
+}
+
+/* ══════════════════════════════
+   FOUNDER SECTION
+══════════════════════════════ */
+.founder-section{
+  background:linear-gradient(135deg,#0a1f0f 0%,#0f2d18 50%,#0a1f0f 100%);
+  border-top:1px solid rgba(201,149,26,.2);
+  border-bottom:1px solid rgba(201,149,26,.2);
+}
+.founder-grid{
+  display:grid;grid-template-columns:1fr 2fr;gap:50px;
+  align-items:start;
+}
+@media(max-width:700px){.founder-grid{grid-template-columns:1fr;}}
+
+.founder-card{
+  border:1px solid rgba(201,149,26,.3);
+  padding:30px 20px;text-align:center;
+  background:rgba(201,149,26,.04);
+  position:relative;
+  overflow:hidden;
+}
+.founder-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold-bright),transparent);
+}
+.founder-avatar{
+  width:90px;height:90px;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  margin:0 auto 14px;
+  background:linear-gradient(135deg,var(--forest),var(--mid-green));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cinzel Decorative',serif;
+  font-size:28px;
+  color:var(--gold-bright);
+  box-shadow:0 0 30px rgba(201,149,26,.3);
+}
+.founder-name{
+  font-family:'Cinzel',serif;font-size:13px;
+  letter-spacing:2px;color:var(--gold-bright);
+  margin-bottom:4px;
+}
+.founder-name-ar{
+  font-family:'Amiri',serif;font-size:18px;
+  color:var(--nile);margin-bottom:10px;
+}
+.founder-role{
+  font-size:9px;letter-spacing:3px;
+  color:var(--silver);text-transform:uppercase;
+  font-family:'Cinzel',serif;
+  border-top:1px solid rgba(201,149,26,.2);
+  padding-top:8px;margin-top:8px;
+}
+
+.founder-bio{font-size:14px;line-height:2;color:rgba(245,245,240,.85);}
+.founder-bio strong{color:var(--gold-pale);}
+
+.credentials{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;
+}
+.credential{
+  border:1px solid rgba(61,200,122,.3);
+  padding:5px 12px;
+  font-size:11px;color:var(--nile);
+  font-family:'Cinzel',serif;letter-spacing:1px;
+  background:rgba(61,200,122,.05);
+}
+
+/* ══════════════════════════════
+   VISION SECTION
+══════════════════════════════ */
+.vision-section{
+  background:radial-gradient(ellipse at 50% 0%,rgba(45,158,79,.08) 0%,transparent 60%),
+             #060e07;
+}
+.vision-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  margin-top:40px;
+}
+@media(max-width:800px){.vision-cards{grid-template-columns:1fr;}}
+.vision-card{
+  border:1px solid rgba(201,149,26,.2);
+  padding:28px 22px;
+  background:rgba(10,31,15,.8);
+  position:relative;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.vision-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(61,200,122,.15);
+}
+.vision-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--nile),transparent);
+}
+.vision-icon{
+  font-size:32px;margin-bottom:14px;display:block;
+  filter:drop-shadow(0 0 10px rgba(61,200,122,.5));
+}
+.vision-card-title{
+  font-family:'Cinzel',serif;font-size:11px;
+  letter-spacing:2px;color:var(--gold-bright);
+  text-transform:uppercase;margin-bottom:8px;
+}
+.vision-card-title-ar{
+  font-family:'Amiri',serif;font-size:17px;
+  color:var(--nile);margin-bottom:10px;
+}
+.vision-card p{font-size:13px;line-height:1.9;color:rgba(245,245,240,.75);}
+
+/* ══════════════════════════════
+   PATENTS SECTION
+══════════════════════════════ */
+.patents-section{
+  background:linear-gradient(180deg,#060e07,#0a1f0f);
+  border-top:1px solid rgba(201,149,26,.15);
+}
+.patents-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+  margin-top:40px;
+}
+@media(max-width:700px){.patents-grid{grid-template-columns:1fr;}}
+
+.patent-card{
+  display:flex;gap:16px;align-items:flex-start;
+  border:1px solid rgba(201,149,26,.2);
+  padding:22px;background:rgba(201,149,26,.03);
+  transition:border-color .3s;
+}
+.patent-card:hover{border-color:rgba(201,149,26,.5);}
+.patent-num{
+  min-width:44px;height:44px;
+  background:linear-gradient(135deg,var(--gold),#6b4a08);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cinzel Decorative',serif;
+  font-size:14px;font-weight:900;color:#0a0800;
+  flex-shrink:0;
+}
+.patent-info{}
+.patent-name{
+  font-family:'Cinzel',serif;font-size:11px;
+  letter-spacing:1px;color:var(--gold-pale);
+  margin-bottom:4px;
+}
+.patent-name-ar{
+  font-family:'Amiri',serif;font-size:15px;
+  color:var(--nile);margin-bottom:6px;
+}
+.patent-desc{font-size:12px;color:var(--silver);line-height:1.7;}
+.patent-status{
+  display:inline-block;
+  margin-top:6px;padding:2px 8px;
+  font-size:9px;letter-spacing:2px;
+  font-family:'Cinzel',serif;
+  text-transform:uppercase;
+}
+.status-registered{
+  background:rgba(61,200,122,.1);
+  border:1px solid rgba(61,200,122,.4);
+  color:var(--nile);
+}
+.status-pending{
+  background:rgba(240,192,64,.1);
+  border:1px solid rgba(240,192,64,.4);
+  color:var(--gold-bright);
+}
+
+/* ══════════════════════════════
+   PROJECTS SECTION
+══════════════════════════════ */
+.projects-section{
+  background:radial-gradient(ellipse 100% 50% at 50% 50%,rgba(15,45,24,.8) 0%,#060e07 100%);
+}
+.projects-timeline{
+  position:relative;margin-top:50px;
+  padding-right:30px;
+}
+.projects-timeline::before{
+  content:'';
+  position:absolute;right:0;top:0;bottom:0;
+  width:2px;
+  background:linear-gradient(180deg,transparent,var(--gold),var(--nile),var(--gold),transparent);
+}
+.project-item{
+  position:relative;margin-bottom:40px;
+  padding:24px 24px 24px 0;
+  animation:fade-up .6s ease both;
+}
+.project-item::before{
+  content:'';
+  position:absolute;right:-8px;top:28px;
+  width:16px;height:16px;
+  background:var(--gold);border-radius:50%;
+  box-shadow:0 0 20px rgba(201,149,26,.6);
+}
+.project-connector{
+  position:absolute;right:8px;top:36px;
+  width:30px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold));
+}
+.project-badge{
+  display:inline-block;padding:3px 10px;
+  font-family:'Cinzel',serif;font-size:8px;
+  letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:10px;
+}
+.badge-flagship{background:rgba(240,192,64,.15);border:1px solid rgba(240,192,64,.4);color:var(--gold-bright);}
+.badge-tech{background:rgba(61,200,122,.1);border:1px solid rgba(61,200,122,.3);color:var(--nile);}
+.badge-edu{background:rgba(100,150,255,.1);border:1px solid rgba(100,150,255,.3);color:#9cb8ff;}
+.badge-health{background:rgba(255,100,100,.1);border:1px solid rgba(255,100,100,.3);color:#ffaaaa;}
+.badge-product{background:rgba(201,149,26,.15);border:1px solid rgba(201,149,26,.4);color:var(--gold-pale);}
+
+.project-name{
+  font-family:'Cinzel',serif;font-size:15px;
+  letter-spacing:2px;color:var(--gold-bright);
+  margin-bottom:4px;
+}
+.project-name-ar{
+  font-family:'Amiri',serif;font-size:18px;
+  color:var(--nile);margin-bottom:10px;
+}
+.project-desc{font-size:13px;line-height:1.9;color:rgba(245,245,240,.8);}
+.project-kpis{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;
+}
+.kpi{
+  font-size:10px;padding:3px 10px;
+  background:rgba(10,31,15,.8);
+  border:1px solid rgba(201,149,26,.2);
+  color:var(--gold-pale);
+  font-family:'Cinzel',serif;letter-spacing:1px;
+}
+
+/* ══════════════════════════════
+   ECOSYSTEM SECTION
+══════════════════════════════ */
+.ecosystem-section{
+  background:#060e07;
+  border-top:1px solid rgba(61,200,122,.1);
+}
+.eco-center{
+  width:120px;height:120px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--forest),var(--mid-green));
+  border:2px solid var(--gold);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  margin:40px auto;
+  box-shadow:0 0 60px rgba(61,200,122,.2),0 0 30px rgba(201,149,26,.2);
+  font-family:'Cinzel Decorative',serif;
+  font-size:10px;color:var(--gold-bright);
+  text-align:center;letter-spacing:1px;
+  animation:eco-pulse 3s ease-in-out infinite;
+}
+@keyframes eco-pulse{
+  0%,100%{box-shadow:0 0 60px rgba(61,200,122,.2),0 0 30px rgba(201,149,26,.2);}
+  50%{box-shadow:0 0 100px rgba(61,200,122,.35),0 0 60px rgba(201,149,26,.3);}
+}
+
+.eco-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  margin-top:10px;
+}
+@media(max-width:700px){.eco-grid{grid-template-columns:1fr;}}
+.eco-node{
+  border:1px solid rgba(61,200,122,.2);
+  padding:18px;text-align:center;
+  background:rgba(15,45,24,.5);
+  transition:all .3s;
+}
+.eco-node:hover{
+  background:rgba(15,45,24,.9);
+  border-color:rgba(61,200,122,.5);
+  transform:scale(1.03);
+}
+.eco-icon{font-size:24px;margin-bottom:8px;display:block;}
+.eco-title{
+  font-family:'Cinzel',serif;font-size:10px;
+  letter-spacing:2px;color:var(--gold-pale);
+  margin-bottom:4px;text-transform:uppercase;
+}
+.eco-title-ar{
+  font-family:'Amiri',serif;font-size:15px;
+  color:var(--nile);margin-bottom:6px;
+}
+.eco-node p{font-size:11px;color:var(--silver);line-height:1.7;}
+
+/* ══════════════════════════════
+   PRODUCTS SECTION
+══════════════════════════════ */
+.products-section{
+  background:linear-gradient(180deg,#060e07 0%,#0a1f0f 100%);
+}
+.products-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  margin-top:40px;
+}
+@media(max-width:900px){.products-row{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.products-row{grid-template-columns:1fr;}}
+
+.product-card{
+  border:1px solid rgba(201,149,26,.2);
+  padding:20px 16px;text-align:center;
+  background:rgba(10,31,15,.7);
+  position:relative;overflow:hidden;
+  transition:all .3s;
+}
+.product-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold-deep,#8b6914),var(--gold-bright),var(--gold-deep,#8b6914));
+}
+.product-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 50px rgba(201,149,26,.2);
+}
+.product-icon{font-size:36px;margin-bottom:12px;display:block;}
+.product-name{
+  font-family:'Cinzel',serif;font-size:10px;
+  letter-spacing:2px;color:var(--gold-bright);
+  text-transform:uppercase;margin-bottom:4px;
+}
+.product-name-ar{
+  font-family:'Amiri',serif;font-size:16px;
+  color:var(--nile);margin-bottom:8px;
+}
+.product-desc{font-size:11px;color:var(--silver);line-height:1.7;}
+.product-price{
+  margin-top:10px;
+  font-family:'Cinzel',serif;font-size:12px;
+  color:var(--gold-pale);
+  border-top:1px solid rgba(201,149,26,.2);
+  padding-top:8px;
+}
+
+/* ══════════════════════════════
+   MARKETS SECTION
+══════════════════════════════ */
+.markets-section{
+  background:radial-gradient(ellipse 80% 50% at 50% 50%,rgba(10,31,15,.9),#060e07);
+  border-top:1px solid rgba(201,149,26,.15);
+}
+.markets-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  margin-top:40px;
+}
+@media(max-width:700px){.markets-grid{grid-template-columns:1fr;}}
+.market-card{
+  padding:22px;
+  border:1px solid rgba(61,200,122,.15);
+  background:rgba(15,45,24,.4);
+  text-align:center;
+}
+.market-flag{font-size:32px;margin-bottom:10px;}
+.market-name{
+  font-family:'Cinzel',serif;font-size:12px;
+  letter-spacing:2px;color:var(--gold-bright);margin-bottom:4px;
+}
+.market-name-ar{font-family:'Amiri',serif;font-size:16px;color:var(--nile);margin-bottom:8px;}
+.market-role{font-size:11px;color:var(--silver);line-height:1.7;}
+
+/* ══════════════════════════════
+   FINANCIALS
+══════════════════════════════ */
+.financials-section{
+  background:#060e07;
+  border-top:1px solid rgba(201,149,26,.15);
+}
+.fin-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  margin-top:40px;
+}
+@media(max-width:700px){.fin-grid{grid-template-columns:repeat(2,1fr);}}
+.fin-card{
+  border:1px solid rgba(201,149,26,.25);
+  padding:22px 16px;text-align:center;
+  background:rgba(201,149,26,.04);
+}
+.fin-num{
+  font-family:'Cinzel Decorative',serif;
+  font-size:24px;font-weight:900;
+  color:var(--gold-bright);
+  display:block;margin-bottom:6px;
+  filter:drop-shadow(0 0 10px rgba(240,192,64,.4));
+}
+.fin-label{
+  font-size:10px;letter-spacing:2px;
+  color:var(--silver);
+  font-family:'Cinzel',serif;text-transform:uppercase;
+}
+.fin-label-ar{
+  font-family:'Cairo',sans-serif;font-size:12px;
+  color:var(--nile);margin-top:4px;
+}
+
+/* ══════════════════════════════
+   CONTACT SECTION
+══════════════════════════════ */
+.contact-section{
+  background:linear-gradient(135deg,#0a1f0f,#0f2d18,#0a1f0f);
+  border-top:1px solid rgba(201,149,26,.2);
+}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;
+  margin-top:40px;
+}
+@media(max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+.contact-block{}
+.contact-block-title{
+  font-family:'Cinzel',serif;font-size:11px;
+  letter-spacing:3px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:16px;
+  border-bottom:1px solid rgba(201,149,26,.2);
+  padding-bottom:8px;
+}
+.contact-item{
+  display:flex;align-items:flex-start;gap:12px;
+  margin-bottom:14px;
+}
+.contact-icon{
+  width:32px;height:32px;flex-shrink:0;
+  border:1px solid rgba(61,200,122,.3);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;background:rgba(61,200,122,.05);
+}
+.contact-text{
+  font-size:12px;line-height:1.7;
+  color:rgba(245,245,240,.75);
+}
+.contact-text strong{color:var(--gold-pale);}
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+footer{
+  background:#030805;
+  padding:30px 20px;
+  text-align:center;
+  border-top:1px solid rgba(201,149,26,.2);
+}
+.footer-logo{
+  font-family:'Cinzel Decorative',serif;
+  font-size:18px;font-weight:900;
+  color:var(--gold);letter-spacing:3px;
+  margin-bottom:8px;
+}
+.footer-sub{
+  font-size:10px;letter-spacing:4px;
+  color:var(--silver);opacity:.5;
+  font-family:'Cinzel',serif;
+  text-transform:uppercase;
+}
+.footer-copy{
+  margin-top:14px;font-size:11px;
+  color:rgba(245,245,240,.3);
+}
+
+/* ══════════════════════════════
+   RESPONSIVE TWEAKS
+══════════════════════════════ */
+@media(max-width:500px){
+  .hero-stats{gap:12px;}
+  .hero-stat{padding:10px 14px;min-width:80px;}
+  .stat-num{font-size:17px;}
+}
+
+/* ══════════════════════════════
+   PRINT OVERRIDE
+══════════════════════════════ */
+@media print{
+  body{background:white;color:black;}
+  .hero{min-height:auto;padding:40px 20px;}
+  .nile-bg,.particles,.infinity-mark{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ PARTICLES ══════════ -->
+<div class="particles" id="particles"></div>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section class="hero">
+  <div class="nile-bg"></div>
+
+  <!-- Infinity watermark SVG -->
+  <svg class="infinity-mark" viewBox="0 0 400 200">
+    <path d="M80 100 C80 60 120 40 160 60 C180 70 200 100 200 100 C200 100 220 130 240 140 C280 160 320 140 320 100 C320 60 280 40 240 60 C220 70 200 100 200 100 C200 100 180 130 160 140 C120 160 80 140 80 100 Z"
+          stroke="#c9951a" stroke-width="3" fill="none"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-ribbon">
+      <span class="ribbon-dot"></span>
+      <span>EST. 1995 · ASWAN, EGYPT · 6 PATENTS</span>
+      <span class="ribbon-dot"></span>
+    </div>
+
+    <h1 class="hero-logo">HONEST FENDY</h1>
+    <p class="hero-logo-ar">مؤسسة أونست فندي للابتكارات</p>
+
+    <div class="gold-divider"></div>
+
+    <p class="hero-tagline">Foundation for Innovations & Digital Solutions</p>
+    <p class="hero-tagline-ar">عبقرية الابتكار · نزاهة الطبيعة · نقاء مياه النيل · تقدم المواد</p>
+
+    <div class="gold-divider-sm"></div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num">30+</span>
+        <span class="stat-label">Years<br>خبرة</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">6</span>
+        <span class="stat-label">Patents<br>براءات</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Countries<br>دول</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">12+</span>
+        <span class="stat-label">Projects<br>مشاريع</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">2026</span>
+        <span class="stat-label">Renewed<br>مجدد</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-ind">
+    <span class="scroll-text">SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     FOUNDER
+══════════════════════════════ -->
+<section class="founder-section">
+  <div class="container">
+    <p class="section-label">The Visionary Behind It All</p>
+    <h2 class="section-title">Founder & Managing Director</h2>
+    <p class="section-title-ar">المؤسس والمدير التنفيذي</p>
+
+    <div class="founder-grid">
+      <div>
+        <div class="founder-card">
+          <div class="founder-avatar">خ</div>
+          <p class="founder-name">Dr. Khaled Abd El-Naim Fendy</p>
+          <p class="founder-name-ar">د. خالد عبد النعيم فندي</p>
+          <p class="founder-role">Founder · Inventor · Engineer · Entrepreneur</p>
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:11px;color:var(--silver);">📍 أسوان، مصر</span>
+            <span style="font-size:11px;color:var(--silver);">✉️ Khaled.Honest@hotmail.com</span>
+            <span style="font-size:11px;color:var(--silver);">📞 0120420848</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="founder-bio">
+          مهندس وعالم ومخترع مصري من أسوان، يحمل خبرة ميدانية تتجاوز <strong>٣٠ عاماً</strong> في مجال معالجة المياه والهندسة البيئية. بدأ مسيرته معيداً في جامعة أسيوط، ثم أسس شركة Honest Fendy Co. التي امتدت فروعها إلى <strong>مصر وقطر والسودان والسعودية</strong>.
+          <br><br>
+          يُعدّ رائداً في البحث الميداني على ورد النيل منذ <strong>عام ٢٠٠٦</strong>، وصاحب رؤية متكاملة لتحويل النفايات الزراعية المصرية إلى منتجات صناعية عالية القيمة.
+          يندمج في عمله العلمي إيمانٌ راسخ وهدفٌ وطني وبيئي خالص، لا ربحي.
+          <br><br>
+          يرأس مبادرة <strong>وَرْد الخير</strong> البيئية (تأسست ٢٠٠٧)، وعضو في حزب مستقبل وطن.
+          يحمل <strong>٦ براءات اختراع</strong> مسجلة في مجالي معالجة المياه والبيئة،
+          وبراءتان إضافيتان قيد التسجيل في أبريل ٢٠٢٦.
+        </p>
+
+        <div class="credentials">
+          <span class="credential">B.Sc. Engineering</span>
+          <span class="credential">Teaching Asst. – Assiut University</span>
+          <span class="credential">Water Treatment Expert</span>
+          <span class="credential">Environmental Engineer</span>
+          <span class="credential">6 Registered Patents</span>
+          <span class="credential">Mostaqbal Watan Party</span>
+          <span class="credential">Ward El-Khayr Initiative</span>
+          <span class="credential">Saudi Arabia Field Ops 2015/2020</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     VISION & MISSION
+══════════════════════════════ -->
+<section class="vision-section">
+  <div class="container">
+    <p class="section-label">Vision · Mission · Values</p>
+    <h2 class="section-title">Who We Are</h2>
+    <p class="section-title-ar">رؤيتنا · رسالتنا · قيمنا</p>
+
+    <div class="vision-cards">
+      <div class="vision-card">
+        <span class="vision-icon">🌍</span>
+        <p class="vision-card-title">Vision</p>
+        <p class="vision-card-title-ar">الرؤية</p>
+        <p>مصر قائدة عالمية في تحويل النفايات الزراعية إلى ثروة صناعية، وفي إنتاج مياه نقية مجانية للمواطن، من خلال تقنيات مصرية خالصة لا تُستورد ولا تُقلَّد.</p>
+      </div>
+      <div class="vision-card">
+        <span class="vision-icon">⚗️</span>
+        <p class="vision-card-title">Mission</p>
+        <p class="vision-card-title-ar">الرسالة</p>
+        <p>تطوير وتسجيل وتطبيق ابتكارات علمية متكاملة في معالجة المياه والمواد المتقدمة والتكنولوجيا التعليمية، مُضافاً إليها البُعد الوطني والبيئي والإنساني.</p>
+      </div>
+      <div class="vision-card">
+        <span class="vision-icon">🤲</span>
+        <p class="vision-card-title">Values</p>
+        <p class="vision-card-title-ar">القيم</p>
+        <p>الصدق العلمي · الإخلاص لله أولاً · الوطنية · الاستدامة البيئية · الشفافية مع الشركاء · وصول المنفعة للمواطن البسيط بلا تكلفة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     PATENTS
+══════════════════════════════ -->
+<section class="patents-section">
+  <div class="container">
+    <p class="section-label">Intellectual Property</p>
+    <h2 class="section-title">Patents & Innovations</h2>
+    <p class="section-title-ar">براءات الاختراع والابتكارات</p>
+
+    <div class="patents-grid">
+      <div class="patent-card">
+        <div class="patent-num">①</div>
+        <div class="patent-info">
+          <p class="patent-name">EG-BBS™ System</p>
+          <p class="patent-name-ar">النظام الجيو-بيوكيميائي لإنتاج الكربون المنشط</p>
+          <p class="patent-desc">تحويل ٥ مخلفات زراعية مصرية إلى كربون منشط فائق التنشيط باستخدام بروتوكول HSBAP الليلي الخاص. البصمة الجيو-كيميائية المصرية تجعله غير قابل للتقليد عالمياً.</p>
+          <span class="patent-status status-pending">Patent Pending – April 2026</span>
+        </div>
+      </div>
+
+      <div class="patent-card">
+        <div class="patent-num">②</div>
+        <div class="patent-info">
+          <p class="patent-name">FENDY™ Alloy System</p>
+          <p class="patent-name-ar">منظومة سبائك فندي (FENDY-1 to 100)</p>
+          <p class="patent-desc">سبائك ألومنيوم محسّنة بمواد محلية متاحة (زجاج مطحون، جير حي، كربون نشط، حديد مغنيتيت) بتكلفة ٦٠–١٥٠ جنيه فقط لسبيكة ١٥ كجم. جودة تصل ٩٥٪.</p>
+          <span class="patent-status status-pending">Patent Pending – April 2026</span>
+        </div>
+      </div>
+
+      <div class="patent-card">
+        <div class="patent-num">③</div>
+        <div class="patent-info">
+          <p class="patent-name">ILGD™ Technology</p>
+          <p class="patent-name-ar">نظام تشخيص الفجوات التعليمية بالذكاء الاصطناعي</p>
+          <p class="patent-desc">منصة AI تستهدف ~٢٢ مليون طالب مصري عبر البنية التحتية القائمة من أجهزة لوحية. يشخّص الفجوات التعليمية الفردية ويوصي بالعلاج في الوقت الفعلي.</p>
+          <span class="patent-status status-pending">Application Submitted – April 2026</span>
+        </div>
+      </div>
+
+      <div class="patent-card">
+        <div class="patent-num">④</div>
+        <div class="patent-info">
+          <p class="patent-name">NPPE™ – Genius Table</p>
+          <p class="patent-name-ar">جدول العبقري – بدائل العناصر النادرة</p>
+          <p class="patent-desc">استبدال العناصر النادرة والمكلفة (اليورانيوم، البلاتين، الفضة، اللانثانيدات) ببدائل محلية مصرية بكفاءة ٨٥–٩٥٪ وتكلفة أقل بـ ٩٠٪.</p>
+          <span class="patent-status status-registered">6 Patents Registered</span>
+        </div>
+      </div>
+
+      <div class="patent-card">
+        <div class="patent-num">⑤</div>
+        <div class="patent-info">
+          <p class="patent-name">Saudi Doughnut Reactor™</p>
+          <p class="patent-name-ar">المفاعل الحلقي السعودي الكبير للتحلية</p>
+          <p class="patent-desc">مفاعل توروئيدي حلقي الشكل لحرق كتلة حيوية محلية (نخيل + مخلفات) لتوليد بخار عالي الحرارة لتحلية المياه بصرف صفري وكفاءة ١٠٠٪.</p>
+          <span class="patent-status status-pending">In Development</span>
+        </div>
+      </div>
+
+      <div class="patent-card">
+        <div class="patent-num">⑥</div>
+        <div class="patent-info">
+          <p class="patent-name">FENDY™ GoldShield Polish</p>
+          <p class="patent-name-ar">بودرة التلميع الذهبي فندي</p>
+          <p class="patent-desc">بودرة تلميع فائقة النعومة للمشغولات الذهبية عيار ٢٤ و١٨، خالية تماماً من الأحماض والبيكربونات. تركيبة مصرية حصرية من أكسيد الألومنيوم والكاولين والسيليكا الميكروني.</p>
+          <span class="patent-status status-registered">Product Launched 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     PROJECTS
+══════════════════════════════ -->
+<section class="projects-section">
+  <div class="container">
+    <p class="section-label">Active Portfolio 2025–2026</p>
+    <h2 class="section-title">Strategic Projects</h2>
+    <p class="section-title-ar">المشاريع الاستراتيجية النشطة</p>
+
+    <div class="projects-timeline">
+
+      <div class="project-item">
+        <div class="project-connector"></div>
+        <span class="project-badge badge-flagship">FLAGSHIP</span>
+        <p class="project-name">EG-BBS™ — Egyptian Geo-Biochemical Biochar System</p>
+        <p class="project-name-ar">النظام الجيو-بيوكيميائي المصري لإنتاج البيوتشار والكربون المنشط</p>
+        <p class="project-desc">إنتاج كربون منشط فائق التنشيط من ٥ مخلفات زراعية مصرية (نوى زيتون ٤٠٪ · نوى تمر ٢٥٪ · سعف النخيل ١٥٪ · ورد النيل المجفف ١٢٪ · قش الأرز/قصب السكر ٨٪). مصر تعاني عجزاً سنوياً يبلغ ٨٠٠٠ طن. مناطق البيع الأولوية: السعودية تجارياً، ومصر بحثاً وإنتاجاً.</p>
+        <div class="project-kpis">
+          <span class="kpi">IRR: 35–45%</span>
+          <span class="kpi">Payback: 2.5–3.5 yrs</span>
+          <span class="kpi">Deficit: 8,000 T/yr</span>
+          <span class="kpi">Phase 1 CAPEX: $1.1–1.5M</span>
+          <span class="kpi">Patent Pending April 2026</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-connector"></div>
+        <span class="project-badge badge-tech">CIRCULAR ECONOMY</span>
+        <p class="project-name">FBCS™ — Fendy Bio-Circular System</p>
+        <p class="project-name-ar">النظام الحيوي الدائري فندي</p>
+        <p class="project-desc">تحويل المخلفات الزراعية المصرية إلى ثلاثة منتجات متكاملة: كربون منشط (EG-BBS)، تربة ذكية حيوية، وألياف بيو-مركبة WPC. مرحلة ثلاث مراحل على المستوى الوطني بإيرادات سنوية ٣٦–٧٧ مليار جنيه مصري عند الطاقة الكاملة.</p>
+        <div class="project-kpis">
+          <span class="kpi">IRR: 32–44%</span>
+          <span class="kpi">Revenue: 36–77B EGP</span>
+          <span class="kpi">Phase 2 CAPEX: $3.9–5.3M</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-connector"></div>
+        <span class="project-badge badge-tech">WATER TECH</span>
+        <p class="project-name">EG-NileBioRef™ — Nile Biorefinery</p>
+        <p class="project-name-ar">المصفاة الحيوية النيلية المتكاملة</p>
+        <p class="project-desc">مصفاة متكاملة لتحويل ورد النيل والمخلفات الزراعية إلى منتجات عالية القيمة، مستفيدةً من البُعد الأمني القومي (وزارة الموارد المائية تنفق ملايين على إزالة ورد النيل يمكن تحويله إلى ربح).</p>
+        <div class="project-kpis">
+          <span class="kpi">IRR: 38–48%</span>
+          <span class="kpi">Investment: ~260M EGP</span>
+          <span class="kpi">Field Research Since 2006</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-connector"></div>
+        <span class="project-badge badge-tech">DESALINATION</span>
+        <p class="project-name">Saudi Doughnut Fusion Desalination Reactor</p>
+        <p class="project-name-ar">المفاعل الحلقي السعودي الكبير لتحلية المياه</p>
+        <p class="project-desc">تقنية تحلية مياه ثورية بمفاعل توروئيدي (حلقي الشكل) يحرق وقوداً حيوياً محلياً بكفاءة كاملة وصرف صفري للمحلول الملحي. مقارنةً بمحطات MSF التقليدية: أسرع نشراً، أقل تكلفةً، صفر انبعاثات.</p>
+        <div class="project-kpis">
+          <span class="kpi">Zero Brine Discharge</span>
+          <span class="kpi">Net-Zero Emissions</span>
+          <span class="kpi">Saudi Vision 2030 Compatible</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-connector"></div>
+        <span class="project-badge badge-edu">EDUCATION AI</span>
+        <p class="project-name">ILGD™ + SERS™ + ATES™ + Living Barcode</p>
+        <p class="project-name-ar">محفظة التكنولوجيا التعليمية</p>
+        <p class="project-desc">أربعة مشاريع تعليمية رقمية مكتملة: تشخيص الفجوات بالذكاء الاصطناعي، نظام الاستعداد للامتحانات، تقييم المعلمين بالذكاء الاصطناعي، والباركود الحيّ الموحد للهوية الرقمية السيادية. قناة التقديم: مكتب رئيس الوزراء.</p>
+        <div class="project-kpis">
+          <span class="kpi">Target: 22M Students</span>
+          <span class="kpi">4 Projects Ready</span>
+          <span class="kpi">PM Office Channel</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-connector"></div>
+        <span class="project-badge badge-health">DIGITAL HEALTH</span>
+        <p class="project-name">Najat System™ — نظام النجاة</p>
+        <p class="project-name-ar">المنصة الرقمية لمرضى الفشل الكلوي</p>
+        <p class="project-desc">منصة صحية رقمية تربط مرضى الفشل الكلوي بأطبائهم في الوقت الفعلي، مع نظام تتبع وإنذار مبكر وخطط علاجية مخصصة. استجابةً للاحتياج الهائل في مصر لمرضى الغسيل الكلوي.</p>
+        <div class="project-kpis">
+          <span class="kpi">Real-Time Monitoring</span>
+          <span class="kpi">Doctor-Patient Platform</span>
+          <span class="kpi">Egypt Priority Need</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-connector"></div>
+        <span class="project-badge badge-product">CONSUMER PRODUCT</span>
+        <p class="project-name">FENDY™ GoldShield — Ultra-Soft Polishing Powder</p>
+        <p class="project-name-ar">بودرة التلميع الذهبي فندي سوبر</p>
+        <p class="project-desc">بودرة تلميع حصرية للمشغولات الذهبية، آمنة تماماً على عيار ٢٤ و١٨. تكلفة الإنتاج ٥٤.٥٠ جنيه/كجم. استراتيجية البيع: برطمان ١٠٠ جرام بـ ٣٠ ج.م → هامش ربح +١٣٠٪.</p>
+        <div class="project-kpis">
+          <span class="kpi">Cost: 54.50 EGP/kg</span>
+          <span class="kpi">Margin: +130%</span>
+          <span class="kpi">Target: Goldsmiths Market</span>
+          <span class="kpi">6 SKUs Ready</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     ECOSYSTEM
+══════════════════════════════ -->
+<section class="ecosystem-section">
+  <div class="container">
+    <p class="section-label">Integrated Circular Economy</p>
+    <h2 class="section-title">The Honest Fendy Ecosystem</h2>
+    <p class="section-title-ar">المنظومة الدائرية المتكاملة</p>
+
+    <div class="eco-center">
+      <span>♾</span>
+      <span style="margin-top:4px;line-height:1.4;">HONEST<br>FENDY</span>
+    </div>
+
+    <div class="eco-grid">
+      <div class="eco-node">
+        <span class="eco-icon">🌿</span>
+        <p class="eco-title">Waste Input</p>
+        <p class="eco-title-ar">المدخلات الزراعية</p>
+        <p>ورد النيل · نوى زيتون وتمر · سعف النخيل · قش الأرز · مخلفات قصب السكر</p>
+      </div>
+      <div class="eco-node">
+        <span class="eco-icon">⚗️</span>
+        <p class="eco-title">HSBAP Process</p>
+        <p class="eco-title-ar">بروتوكول النقع الليلي</p>
+        <p>نقيع مائي بـ ٥ مكونات (ماء نيل · ZnCl₂ · K₂CO₃ · خل التفاح · Bacillus subtilis) → تنشيط فائق</p>
+      </div>
+      <div class="eco-node">
+        <span class="eco-icon">🏭</span>
+        <p class="eco-title">Products Out</p>
+        <p class="eco-title-ar">المنتجات الناتجة</p>
+        <p>كربون منشط Premium · تربة BioSoil · فلتر AquaFilter · ألياف WPC · أسمدة عضوية</p>
+      </div>
+      <div class="eco-node">
+        <span class="eco-icon">💧</span>
+        <p class="eco-title">Water Systems</p>
+        <p class="eco-title-ar">منظومات المياه</p>
+        <p>تحلية المياه · تنقية النيل · أرباح الكربون تموّل محطات تحلية توزع مياهاً مجانية للمواطن</p>
+      </div>
+      <div class="eco-node">
+        <span class="eco-icon">🔬</span>
+        <p class="eco-title">Advanced Materials</p>
+        <p class="eco-title-ar">المواد المتقدمة</p>
+        <p>سبائك FENDY · بدائل عناصر نادرة NPPE · خلايا شمسية بسيليكون مصري · تيتانيوم رمال سوداء</p>
+      </div>
+      <div class="eco-node">
+        <span class="eco-icon">🎓</span>
+        <p class="eco-title">Digital Solutions</p>
+        <p class="eco-title-ar">الحلول الرقمية</p>
+        <p>ILGD تعليم · SERS امتحانات · ATES تقييم المعلمين · Najat صحة · Living Barcode هوية</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     PRODUCTS
+══════════════════════════════ -->
+<section class="products-section">
+  <div class="container">
+    <p class="section-label">Market-Ready Products</p>
+    <h2 class="section-title">Product Lines</h2>
+    <p class="section-title-ar">خطوط المنتجات الجاهزة للسوق</p>
+
+    <div class="products-row">
+      <div class="product-card">
+        <span class="product-icon">⬛</span>
+        <p class="product-name">EG-BBS Premium</p>
+        <p class="product-name-ar">الكربون المنشط الممتاز</p>
+        <p class="product-desc">كربون منشط فائق الجودة للتصفية الصناعية والأمن الغذائي</p>
+        <p class="product-price">Export Grade · Saudi Market</p>
+      </div>
+      <div class="product-card">
+        <span class="product-icon">🌱</span>
+        <p class="product-name">BioSoil™</p>
+        <p class="product-name-ar">التربة الذكية الحيوية</p>
+        <p class="product-desc">تربة حيوية محسّنة بالبيوتشار لزيادة خصوبة الأراضي المصرية</p>
+        <p class="product-price">National Agriculture Market</p>
+      </div>
+      <div class="product-card">
+        <span class="product-icon">🏗️</span>
+        <p class="product-name">FENDY™ Alloys</p>
+        <p class="product-name-ar">سبائك فندي المتقدمة</p>
+        <p class="product-desc">سبائك ألومنيوم محسّنة بتكلفة ٦٠–١٥٠ ج.م بجودة صناعية ٩٥٪</p>
+        <p class="product-price">60–150 EGP / 15kg Ingot</p>
+      </div>
+      <div class="product-card">
+        <span class="product-icon">✨</span>
+        <p class="product-name">GoldShield™</p>
+        <p class="product-name-ar">بودرة التلميع الذهبي</p>
+        <p class="product-desc">بودرة تلميع احترافية للمشغولات الذهبية — آمنة وفائقة النعومة</p>
+        <p class="product-price">30 EGP / 100g · Margin +130%</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     MARKETS
+══════════════════════════════ -->
+<section class="markets-section">
+  <div class="container">
+    <p class="section-label">Geographic Presence</p>
+    <h2 class="section-title">Markets & Operations</h2>
+    <p class="section-title-ar">الأسواق والعمليات الجغرافية</p>
+
+    <div class="markets-grid">
+      <div class="market-card">
+        <div class="market-flag">🇪🇬</div>
+        <p class="market-name">Egypt — HQ</p>
+        <p class="market-name-ar">مصر — المقر الرئيسي</p>
+        <p class="market-role">أسوان: البحث والتطوير وتسجيل البراءات والإنتاج<br>القاهرة/الجيزة: المكتب الرئيسي<br>قناة: مكتب رئيس الوزراء للمشاريع التعليمية<br>شراكة: وزارة الموارد المائية</p>
+      </div>
+      <div class="market-card">
+        <div class="market-flag">🇸🇦</div>
+        <p class="market-name">Saudi Arabia — Primary</p>
+        <p class="market-name-ar">المملكة العربية السعودية — السوق الأول</p>
+        <p class="market-role">التجارب الميدانية ٢٠١٥ و٢٠٢٠ (أدلة فيديو)<br>الهدف الرئيسي لتصدير EG-BBS™<br>LOI طلب شراكة تجارية سعودية — قيد التفاوض أبريل ٢٠٢٦<br>مشروع المفاعل الحلقي للتحلية</p>
+      </div>
+      <div class="market-card">
+        <div class="market-flag">🌍</div>
+        <p class="market-name">Qatar · Sudan · UAE</p>
+        <p class="market-name-ar">قطر · السودان · الإمارات</p>
+        <p class="market-role">قطر – الدوحة: شارع حمد بن سلطان، بجوار أكاديمية اسباير<br>السودان – أم درمان: فيلا ٣٣ دريم لاند<br>الإمارات: نشر مرن ومعياري لمحطات التحلية للجزر والمدن</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     FINANCIALS
+══════════════════════════════ -->
+<section class="financials-section">
+  <div class="container">
+    <p class="section-label">Key Financial Indicators</p>
+    <h2 class="section-title">Investment Highlights</h2>
+    <p class="section-title-ar">المؤشرات المالية الرئيسية</p>
+
+    <div class="fin-grid">
+      <div class="fin-card">
+        <span class="fin-num">45%</span>
+        <p class="fin-label">Max IRR</p>
+        <p class="fin-label-ar">أقصى معدل عائد داخلي</p>
+      </div>
+      <div class="fin-card">
+        <span class="fin-num">2.5yr</span>
+        <p class="fin-label">Min Payback</p>
+        <p class="fin-label-ar">أقل مدة استرداد رأس المال</p>
+      </div>
+      <div class="fin-card">
+        <span class="fin-num">77B</span>
+        <p class="fin-label">EGP Revenue (Full Scale)</p>
+        <p class="fin-label-ar">إيرادات الطاقة الكاملة بالجنيه</p>
+      </div>
+      <div class="fin-card">
+        <span class="fin-num">8K T</span>
+        <p class="fin-label">Egypt Carbon Deficit/yr</p>
+        <p class="fin-label-ar">عجز مصر السنوي من الكربون المنشط</p>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;border:1px solid rgba(201,149,26,.2);padding:20px;background:rgba(201,149,26,.03);">
+      <p style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;">FUNDING CHANNELS · قنوات التمويل</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="padding:5px 12px;border:1px solid rgba(61,200,122,.3);font-size:11px;color:var(--nile);font-family:'Cinzel',serif;">MSMEDA – 16733</span>
+        <span style="padding:5px 12px;border:1px solid rgba(61,200,122,.3);font-size:11px;color:var(--nile);font-family:'Cinzel',serif;">GEF/UNDP Small Grants $25K–75K</span>
+        <span style="padding:5px 12px;border:1px solid rgba(61,200,122,.3);font-size:11px;color:var(--nile);font-family:'Cinzel',serif;">GEFF – Banque Misr / NBE</span>
+        <span style="padding:5px 12px;border:1px solid rgba(61,200,122,.3);font-size:11px;color:var(--nile);font-family:'Cinzel',serif;">Environmental Protection Fund</span>
+        <span style="padding:5px 12px;border:1px solid rgba(61,200,122,.3);font-size:11px;color:var(--nile);font-family:'Cinzel',serif;">Saudi Strategic Partner (LOI pending)</span>
+        <span style="padding:5px 12px;border:1px solid rgba(61,200,122,.3);font-size:11px;color:var(--nile);font-family:'Cinzel',serif;">Ministry of Water Resources</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     CONTACT
+══════════════════════════════ -->
+<section class="contact-section">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Contact & Offices</h2>
+    <p class="section-title-ar">معلومات التواصل والمكاتب</p>
+
+    <div class="contact-grid">
+      <div class="contact-block">
+        <p class="contact-block-title">HEAD OFFICE · المكتب الرئيسي</p>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <p class="contact-text"><strong>القاهرة:</strong> ١٠٤ ش التحرير، الدقي – الجيزة<br>٥٥ عمارات العبور، صلاح سالم – القاهرة</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <p class="contact-text"><strong>أسوان:</strong> مقر البحث والتطوير والإنتاج</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <p class="contact-text"><strong>0120420848</strong> · 0114449828</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <p class="contact-text">Khaled.Honest@hotmail.com<br>Khaled.Honest@Yahoo.com</p>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <p class="contact-block-title">REGIONAL OFFICES · المكاتب الإقليمية</p>
+        <div class="contact-item">
+          <div class="contact-icon">🇶🇦</div>
+          <p class="contact-text"><strong>قطر – الدوحة:</strong><br>١٠٦ ش حمد بن سلطان، بجوار أكاديمية اسباير<br>Tel: 97421611165</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🇸🇩</div>
+          <p class="contact-text"><strong>السودان – أم درمان:</strong><br>فيلا ٣٣، موقع دريم لاند<br>Tel: 024933251612</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🇸🇦</div>
+          <p class="contact-text"><strong>السعودية:</strong><br>شراكة تجارية قيد التفاوض (LOI – أبريل ٢٠٢٦)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer>
+  <div class="gold-divider" style="margin-bottom:20px;"></div>
+  <p class="footer-logo">HONEST FENDY™</p>
+  <p class="footer-sub">Foundation for Innovations & Digital Solutions</p>
+  <p class="footer-sub" style="margin-top:4px;font-family:'Amiri',serif;font-size:14px;color:var(--nile);opacity:.6;">مؤسسة أونست فندي للابتكارات والحلول الرقمية</p>
+  <div class="gold-divider-sm" style="margin-top:16px;"></div>
+  <p class="footer-copy">
+    Commercial Registry Renewed April 2026 · Aswan, Egypt<br>
+    6 Registered Patents · 2 Pending (April 2026)<br>
+    "عبقرية الابتكار · نزاهة الطبيعة · نقاء مياه النيل · تقدم المواد"
+  </p>
+</footer>
+
+
+<script>
+// Generate floating particles
+const container = document.getElementById('particles');
+for(let i = 0; i < 40; i++){
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = Math.random() * 3 + 1;
+  p.style.cssText = `
+    width:${size}px;height:${size}px;
+    left:${Math.random()*100}%;
+    bottom:${Math.random()*20}%;
+    animation-duration:${Math.random()*10+8}s;
+    animation-delay:${Math.random()*8}s;
+    opacity:0;
+  `;
+  container.appendChild(p);
+}
+
+// Intersection Observer for fade-up animations
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.project-item,.vision-card,.eco-node,.patent-card').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(24px)';
+  el.style.transition='opacity .6s ease, transform .6s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
