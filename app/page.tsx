@@ -103,11 +103,10 @@ export default function HomePage() {
             >
               <div className="image-sheen relative h-56">
                 <Image
-                  src="/honest-fendy/innovations-sheet.png"
+                  src={innovation.image}
                   alt={`صورة ابتكار ${innovation.title}`}
                   fill
                   className="object-cover transition duration-500 group-hover:scale-105"
-                  style={{ objectPosition: innovation.position }}
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 />
               </div>

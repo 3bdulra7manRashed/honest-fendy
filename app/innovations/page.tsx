@@ -32,11 +32,10 @@ export default function InnovationsPage() {
           >
             <div className="image-sheen relative min-h-80">
               <Image
-                src="/honest-fendy/innovations-sheet.png"
+                src={innovation.image}
                 alt={`عرض بصري لتقنية ${innovation.title}`}
                 fill
                 className="object-cover"
-                style={{ objectPosition: innovation.position }}
                 sizes="(min-width: 1024px) 45vw, 100vw"
               />
             </div>

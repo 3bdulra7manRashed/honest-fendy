@@ -30,7 +30,7 @@ export const innovations = [
       "الإعفاء الجمركي الكامل من رسوم الكربون الأوروبية (CBAM)",
       "نظام استرداد طاقة متكامل بصافي استهلاك 0.8 GJ/طن فقط"
     ],
-    position: "left top"
+    image: "/innovations/images/eg-irongreen.png"
   },
   {
     title: "FENDY Virtual Plant™",
@@ -47,7 +47,7 @@ export const innovations = [
       "نموذج تدريبي تفاعلي للكوادر التشغيلية بدون هدر أو مخاطر",
       "تقليل الفاقد وتأكيد الجودة العالية للمواد المنتجة"
     ],
-    position: "center top"
+    image: "/innovations/images/fendy-virtual-plant.png"
   },
   {
     title: "FENDY BioActivated Carbon™",
@@ -64,7 +64,7 @@ export const innovations = [
       "رقم يود متوقع لا يقل عن 900 ملغ/غ وفق معايير AWWA العالمية",
       "توطين صناعة الكربون النشط باستخدام مخلفات محلية 100%"
     ],
-    position: "right top"
+    image: "/innovations/images/fendy-bioactivated-carbon.png"
   },
   {
     title: "FENDY FlexCoat™",
@@ -81,7 +81,7 @@ export const innovations = [
       "تقليل استهلاك الكلور بنسبة 40% بفضل السطح النانوي المضاد للطحالب",
       "قطعة واحدة متصلة بلا أي فواصل تقاوم حرارة الجو الشديدة"
     ],
-    position: "left bottom"
+    image: "/innovations/images/fendy-flexcoat.png"
   },
   {
     title: "FENDY ThermoBrick™",
@@ -98,7 +98,7 @@ export const innovations = [
       "بصمة كربونية سالبة بالكامل (صفر أسمنت وصفر حرق)",
       "يتحلل حيوياً بالكامل بعد الهدم ليعمل كتربة زراعية خصبة للتشجير"
     ],
-    position: "center bottom"
+    image: "/innovations/images/fendy-thermobrick.png"
   },
   {
     title: "FENDY GeoBlock™",
@@ -115,7 +115,7 @@ export const innovations = [
       "خفض البصمة الكربونية للمشروعات الحضرية لنسب سالبة بالكامل",
       "سطح خشن آمن مانع للانزلاق ومقاوم للعوامل الجوية القاسية"
     ],
-    position: "right bottom"
+    image: "/innovations/images/fendy-geoblock.png"
   }
 ];
 
