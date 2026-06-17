@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X, Download } from "lucide-react";
+import { X, Download, BookOpen } from "lucide-react";
 
 interface PdfModalProps {
   isOpen: boolean;
@@ -45,52 +45,55 @@ export function PdfModal({ isOpen, onClose, pdfUrl, title }: PdfModalProps) {
 
   if (!isOpen || !mounted) return null;
 
+  const readUrl = pdfUrl.replace("/books/", "/read/");
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6 bg-black/80 backdrop-blur-md transition-opacity duration-300">
-      <div className="relative w-full max-w-5xl h-[88vh] flex flex-col premium-panel rounded-2xl overflow-hidden border border-white/10 bg-[#0B0F14]/95 shadow-[0_0_80px_rgba(0,0,0,0.8)]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-300">
+      <div className="relative w-full max-w-lg premium-panel rounded-2xl border border-white/10 bg-[#0B0F14]/95 shadow-[0_0_80px_rgba(0,0,0,0.8)] p-6 md:p-8 flex flex-col text-center">
         
-        {/* Modal Header */}
-        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4 bg-[#121820]/90">
-          <div>
-            <h3 className="text-lg font-black text-white">{title}</h3>
-            <p className="text-xs text-[#17C3B2] mt-0.5 font-bold">المكتبة الرقمية</p>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            {/* Download Link */}
-            <a
-              href={pdfUrl}
-              download
-              className="inline-flex h-9 items-center justify-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/12 text-[#F6E3A8] hover:border-[#D4AF37]/70 hover:bg-[#D4AF37]/18 active:scale-95 transition duration-200 px-4 text-xs font-bold cursor-pointer"
-              title="تحميل الملف مباشرة"
-            >
-              <Download size={14} />
-              <span>تحميل PDF</span>
-            </a>
-            
-            {/* Close Button */}
-            <button
-              onClick={onClose}
-              className="rounded-full p-2 text-white/60 hover:text-white bg-white/5 hover:bg-white/10 active:scale-95 transition duration-200 cursor-pointer"
-              aria-label="إغلاق النافذة"
-            >
-              <X size={20} />
-            </button>
-          </div>
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 rounded-full p-2 text-white/60 hover:text-white bg-white/5 hover:bg-white/10 active:scale-95 transition duration-200 cursor-pointer"
+          aria-label="إغلاق النافذة"
+        >
+          <X size={20} />
+        </button>
+
+        {/* Icon Preview Indicator */}
+        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#17C3B2]/30 bg-[#17C3B2]/10 text-[#17C3B2] shadow-[0_0_30px_rgba(23,195,178,0.2)]">
+          <BookOpen size={30} />
         </div>
 
-        {/* Modal Body (Native Browser PDF Viewer Iframe) */}
-        <div className="flex-1 w-full bg-[#070A0E] relative">
-          {(() => {
-            const readUrl = pdfUrl.replace("/books/", "/read/");
-            return (
-              <iframe
-                src={`${readUrl}#toolbar=1&navpanes=0`}
-                className="w-full h-full border-0"
-                title={title}
-              />
-            );
-          })()}
+        {/* Info */}
+        <p className="text-xs font-bold tracking-[0.08em] text-[#17C3B2] mb-2">المكتبة الرقمية</p>
+        <h3 className="text-xl md:text-2xl font-black text-white mb-3 px-4 leading-tight">{title}</h3>
+        
+        <p className="text-sm leading-relaxed text-[#D6D6D6]/70 mb-8 px-2">
+          انقر فوق "قراءة الكتاب" لفتح الملف مباشرة وقراءته في علامة تبويب جديدة باستخدام قارئ الملفات المدمج بالمتصفح، أو انقر فوق "تحميل PDF" لحفظه على جهازك.
+        </p>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
+          <a
+            href={readUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            className="w-full sm:flex-1 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#17C3B2] text-[#07100F] shadow-[0_0_30px_rgba(23,195,178,.15)] hover:bg-[#35E0D0] hover:-translate-y-0.5 active:translate-y-0 transition duration-300 text-sm font-extrabold cursor-pointer"
+          >
+            <BookOpen size={16} />
+            <span>قراءة الكتاب</span>
+          </a>
+
+          <a
+            href={pdfUrl}
+            download
+            className="w-full sm:flex-1 inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/12 text-[#F6E3A8] hover:border-[#D4AF37]/70 hover:bg-[#D4AF37]/18 hover:-translate-y-0.5 active:translate-y-0 transition duration-300 text-sm font-extrabold cursor-pointer"
+          >
+            <Download size={16} />
+            <span>تحميل PDF</span>
+          </a>
         </div>
 
       </div>
