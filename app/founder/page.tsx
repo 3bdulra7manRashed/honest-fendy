@@ -7,7 +7,7 @@ import { founderAchievements, founderMilestones } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "المؤسس",
-  description: "صفحة الدكتور خالد عبد المنعم فندي، مؤسس هونست فندي وصاحب الرؤية الابتكارية."
+  description: "صفحة الدكتور خالد عبد النعيم فندي، مؤسس هونست فندي وصاحب الرؤية الابتكارية."
 };
 
 const profileSections = [
