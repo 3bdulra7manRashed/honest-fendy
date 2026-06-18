@@ -66,7 +66,9 @@ export const metadata: Metadata = {
     images: ["/honest-fendy/hero.png"]
   },
   icons: {
-    icon: "/honest-fendy/hero.png"
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png"
   }
 };
 

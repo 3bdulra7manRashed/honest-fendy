@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/lib/data";
 
@@ -6,17 +7,15 @@ export function Footer() {
     <footer className="relative border-t border-white/10 bg-[#080B10]">
       <div className="section-shell grid gap-10 py-12 md:grid-cols-[1.2fr_.8fr_.9fr]">
         <div>
-          <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-full border border-[#17C3B2]/35 bg-[#17C3B2]/10 text-sm font-black text-white">
-              هـ ف
-            </span>
-            <div>
-              <p className="text-sm font-extrabold tracking-[0.08em] text-white">هونست فندي</p>
-              <p className="mt-1 text-[10px] font-semibold tracking-[0.08em] text-[#17C3B2]">
-                مؤسسة الابتكار والمواد المتقدمة
-              </p>
-            </div>
-          </div>
+          <Link href="/" className="relative block aspect-[808/520] w-52 overflow-hidden rounded-lg" aria-label="هونست فندي">
+            <Image
+              src="/logo/brand-lockup.png"
+              alt="Honest Fendi — Saudi Engineering Intelligence"
+              fill
+              className="object-cover"
+              sizes="208px"
+            />
+          </Link>
           <p className="mt-5 max-w-md text-sm leading-7 text-[#D6D6D6]/72">
             مؤسسة بحثية وابتكارية تطوّر حلول المياه والبيئة والمواد المتقدمة، وتدعم الاستدامة وبراءات
             الاختراع وبناء المعرفة للأجيال القادمة.

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -33,8 +34,15 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="group flex items-center gap-3" aria-label="العودة إلى الرئيسية">
-          <span className="grid h-11 w-11 place-items-center rounded-full border border-[#17C3B2]/35 bg-[#17C3B2]/10 text-sm font-black text-white shadow-[0_0_28px_rgba(23,195,178,.2)]">
-            هـ ف
+          <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl shadow-[0_0_28px_rgba(23,195,178,.2)]">
+            <Image
+              src="/logo/brand-mark.png"
+              alt=""
+              fill
+              priority
+              className="object-cover"
+              sizes="48px"
+            />
           </span>
           <span className="leading-none">
             <span className="block text-sm font-extrabold tracking-[0.08em] text-white">هونست فندي</span>
