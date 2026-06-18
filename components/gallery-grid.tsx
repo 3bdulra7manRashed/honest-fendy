@@ -276,7 +276,7 @@ export function GalleryGrid({ imagePaths }: GalleryGridProps) {
             
             {/* Bottom indicator */}
             <div className="mt-4 text-xs text-white/40 font-bold">
-              {lightboxIndex + 1} / {items.length}
+              {lightboxIndex! + 1} / {items.length}
             </div>
           </motion.div>
         )}
