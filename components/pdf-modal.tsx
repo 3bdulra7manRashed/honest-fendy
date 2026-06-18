@@ -70,7 +70,7 @@ export function PdfModal({ isOpen, onClose, pdfUrl, title }: PdfModalProps) {
         <h3 className="text-xl md:text-2xl font-black text-white mb-3 px-4 leading-tight">{title}</h3>
         
         <p className="text-sm leading-relaxed text-[#D6D6D6]/70 mb-8 px-2">
-          انقر فوق "قراءة الكتاب" لفتح الملف مباشرة وقراءته في علامة تبويب جديدة باستخدام قارئ الملفات المدمج بالمتصفح، أو انقر فوق "تحميل PDF" لحفظه على جهازك.
+          انقر فوق &quot;قراءة الكتاب&quot; لفتح الملف مباشرة وقراءته في علامة تبويب جديدة باستخدام قارئ الملفات المدمج بالمتصفح، أو انقر فوق &quot;تحميل PDF&quot; لحفظه على جهازك.
         </p>
 
         {/* Action Buttons */}
