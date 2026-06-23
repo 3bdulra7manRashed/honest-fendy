@@ -30,9 +30,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(270deg,rgba(11,15,20,.94)_0%,rgba(11,15,20,.78)_40%,rgba(11,15,20,.24)_74%),linear-gradient(180deg,rgba(11,15,20,.22)_0%,#0B0F14_100%)]" />
         <div className="section-shell relative flex min-h-screen items-center pt-28">
           <FadeIn className="max-w-4xl pb-20">
-            <p className="mb-7 text-xs font-extrabold tracking-[0.12em] text-[#17C3B2]">
+            <span className="mb-7 inline-flex items-center rounded-full border border-[#17C3B2]/20 bg-[#17C3B2]/10 px-3 py-1 text-xs font-extrabold tracking-[0.12em] text-[#17C3B2]">
               الابتكار · الاستدامة · المواد المتقدمة
-            </p>
+            </span>
             <h1 className="brand-gradient-text text-balance text-5xl font-black leading-[1.18] sm:text-6xl lg:text-7xl">
               ثلاثون عامًا من الابتكار في حلول البيئة والمياه والمواد المتقدمة
             </h1>

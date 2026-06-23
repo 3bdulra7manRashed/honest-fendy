@@ -14,7 +14,7 @@ const profileSections = [
   {
     title: "السيرة",
     icon: PenTool,
-    text: "الدكتور خالد عبد المنعم فندي هو المؤسس والقوة الفكرية وراء هونست فندي، صاحب رؤية ابتكارية ممتدة لأكثر من ثلاثة عقود في مجالات البيئة والمياه والمواد المتقدمة والتنمية المستدامة."
+    text: "الدكتور خالد عبد النعيم فندي هو المؤسس والقوة الفكرية وراء هونست فندي، صاحب رؤية ابتكارية ممتدة لأكثر من ثلاثة عقود في مجالات البيئة والمياه والمواد المتقدمة والتنمية المستدامة."
   },
   {
     title: "الفلسفة",
@@ -39,9 +39,11 @@ export default function FounderPage() {
       <section className="relative overflow-hidden pt-36">
         <div className="section-shell grid min-h-[72vh] items-center gap-12 pb-20 lg:grid-cols-[.92fr_1.08fr]">
           <FadeIn>
-            <p className="mb-6 text-xs font-extrabold tracking-[0.12em] text-[#17C3B2]">المؤسس</p>
+            <span className="mb-6 inline-flex items-center rounded-full border border-[#17C3B2]/20 bg-[#17C3B2]/10 px-3 py-1 text-xs font-extrabold tracking-[0.12em] text-[#17C3B2]">
+              المؤسس
+            </span>
             <h1 className="brand-gradient-text text-balance text-5xl font-black leading-[1.16] md:text-7xl">
-              الدكتور خالد عبد المنعم فندي
+              الدكتور خالد عبد النعيم فندي
             </h1>
             <p className="mt-7 max-w-2xl text-xl leading-10 text-[#D6D6D6]/78">
               صاحب رؤية ابتكارية ممتدة لأكثر من ثلاثة عقود في مجالات البيئة والمياه والمواد المتقدمة والتنمية
